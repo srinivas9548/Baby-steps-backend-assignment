@@ -1,0 +1,45 @@
+// GET all doctors
+GET http://localhost:3000/doctors
+###
+
+// GET available slots for a doctor on a given date
+GET http://localhost:3000/doctors/5/slots?date=2025-02-25
+###
+
+// Get all appointments
+GET http://localhost:3000/appointments/
+###
+
+// Get a specific appointment by ID
+GET http://localhost:3000/appointments/1
+###
+
+// Create a New Appointment
+POST http://localhost:3000/appointments/
+Content-Type: application/json
+
+{
+  "doctorId": 1,
+  "date": "2025-02-25",
+  "duration": 30,
+  "appointmentType": "Routine Check-Up",
+  "patientName": "John Doe",
+  "notes": "First-time visit"
+}
+###
+
+// Update an existing appointment
+PUT http://localhost:3000/appointments/2
+Content-Type: application/json
+
+{
+  "date": "2025-02-26",
+  "duration": 60,
+  "appointmentType": "Follow-up",
+  "patientName": "John Doe",
+  "notes": "Check-up after medication"
+}
+###
+
+// Delete an appointment
+DELETE http://localhost:3000/appointments/1
