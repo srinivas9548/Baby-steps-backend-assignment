@@ -32,6 +32,15 @@ const initializeDBAndServer = async () => {
 
 initializeDBAndServer();
 
+app.get("/", (request, response) => {
+    try {
+        response.send("Welcome! This is a Baby Steps Company Assignment backend domain.Please access any path to get the data.");
+    } catch (e) {
+        console.log(e.message);
+        response.status(500).json({ error: 'Internal Server Error' });
+    }
+});
+
 // GET all doctors
 app.get("/doctors/", async (request, response) => {
     try {
